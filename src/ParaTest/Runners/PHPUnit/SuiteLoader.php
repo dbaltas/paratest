@@ -80,10 +80,39 @@ class SuiteLoader
     {
         foreach($this->files as $path) {
             $parser = new Parser($path);
-            if($class = $parser->getClass())
-                $this->loadedSuites[$path] = new Suite($path, array_map(function($fn) use($path) {
-                    return new TestMethod($path, $fn->getName());
-                }, $class->getMethods($this->options ? $this->options->annotations : array())));
+            if($class = $parser->getClass()) {
+                $this->loadedSuites[$path] = new Suite($path, $this->executableTests($path,
+                    $class->getMethods($this->options ? $this->options->annotations : array())));
+            }
         }
+    }
+
+    private function executableTests($path, $classMethods)
+    {
+        $tests = array();
+        $groups = $this->breakMethodsInDependentGroups($classMethods);
+        foreach ($groups as $group) {
+            $test = new TestMethod($path, implode('|', $group));
+            $tests[] = $test;
+        }
+        return $tests;
+    }
+
+    private function breakMethodsInDependentGroups($methods)
+    {
+        $groups = array();
+        foreach($methods as $method)
+            if(preg_match("/\bdepends\b \b(.*)\b/", $method->getDocBlock(), $matches)) {
+                $dependsOn = $matches[1];
+                foreach ($groups as $key => $test)
+                    foreach ($test as $testMethod)
+                        if (preg_match('/'.$dependsOn.'/', $testMethod)) {
+                            $groups[$key][] = $method->getName();
+                            continue;
+                        }
+            }
+            else
+                $groups[] = array($method->getName());
+        return $groups;
     }
 }
