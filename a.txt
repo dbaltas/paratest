@@ -1,0 +1,48 @@
+Worker starting
+Executing: /home/dbaltas/projects/paratest/vendor/bin/phpunit --configuration /home/dbaltas/projects/paratest/phpunit.xml.dist --log-junit /tmp/PT_Z7eDZg  /home/dbaltas/projects/paratest/test/ParaTest/Runners/PHPUnit/RunnerTest.php
+PHPUnit 3.7.21 by Sebastian Bergmann.
+
+Configuration read from /home/dbaltas/projects/paratest/phpunit.xml.dist
+
+......
+
+Time: 0 seconds, Memory: 3.50Mb
+
+[30;42m[2KOK (6 tests, 15 assertions)
+[0m[2K0FINISHED
+Executing: /home/dbaltas/projects/paratest/vendor/bin/phpunit --configuration /home/dbaltas/projects/paratest/phpunit.xml.dist --log-junit /tmp/PT_xqvneZ  /home/dbaltas/projects/paratest/test/ParaTest/Runners/PHPUnit/ConfigurationTest.php
+PHPUnit 3.7.21 by Sebastian Bergmann.
+
+Configuration read from /home/dbaltas/projects/paratest/phpunit.xml.dist
+
+....
+
+Time: 0 seconds, Memory: 3.75Mb
+
+[30;42m[2KOK (4 tests, 8 assertions)
+[0m[2K0FINISHED
+Executing: /home/dbaltas/projects/paratest/vendor/bin/phpunit --configuration /home/dbaltas/projects/paratest/phpunit.xml.dist --log-junit /tmp/PT_5giutH  /home/dbaltas/projects/paratest/test/ParaTest/Runners/PHPUnit/OptionsTest.php
+PHPUnit 3.7.21 by Sebastian Bergmann.
+
+Configuration read from /home/dbaltas/projects/paratest/phpunit.xml.dist
+
+.........
+
+Time: 0 seconds, Memory: 3.75Mb
+
+[30;42m[2KOK (9 tests, 14 assertions)
+[0m[2K0FINISHED
+Executing: /home/dbaltas/projects/paratest/vendor/bin/phpunit --configuration /home/dbaltas/projects/paratest/phpunit.xml.dist --log-junit /tmp/PT_jxcTll  /home/dbaltas/projects/paratest/test/ParaTest/Runners/PHPUnit/ExecutableTestTest.php
+PHPUnit 3.7.21 by Sebastian Bergmann.
+
+Configuration read from /home/dbaltas/projects/paratest/phpunit.xml.dist
+
+........
+
+Time: 0 seconds, Memory: 4.00Mb
+
+[30;42m[2KOK (8 tests, 8 assertions)
+[0m[2K0FINISHED
+20130704 00:35:28/home/dbaltas/projects/paratest/test/bootstrap.php
+20130704 00:36:19/home/dbaltas/projects/paratest/test/bootstrap.php
+20130704 00:36:44/home/dbaltas/projects/paratest/test/bootstrap.php

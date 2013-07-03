@@ -128,6 +128,7 @@ abstract class ExecutableTest
         $environmentVariables['PARATEST'] = 1;
         $this->handleEnvironmentVariables($environmentVariables);
         $command = $this->command($binary, $options);
+        echo "$command".PHP_EOL;
         $this->process = new Process($command, null, $environmentVariables);
         $this->process->start();
         return $this;

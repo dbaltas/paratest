@@ -21,8 +21,10 @@ class OptionsTest extends \TestBase
 
     public function testFilteredOptionsShouldContainExtraneousOptions()
     {
+        sleep(3);
         $this->assertEquals('group1', $this->options->filtered['group']);
         $this->assertEquals('/path/to/bootstrap', $this->options->filtered['bootstrap']);
+        $this->assertFalse(true);
     }
 
     public function testAnnotationsReturnsAnnotations()
